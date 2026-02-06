@@ -12,13 +12,10 @@
 
 .like-icon.is-liked .like-icon-core,
 .like-icon.is-liked .like-icon-main-body,
-.like-icon.is-liked .like-icon-contour ,
-.like-icon.is-liked .like-icon-sparks {
-  animation-name: core;
-  animation-duration: 0.3s;
-  animation-delay: 0;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
+.like-icon.is-liked .like-icon-contour {
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+  color: var(--color-red);
 }
 
 .like-icon.is-liked .like-icon-sparks {
@@ -26,15 +23,14 @@
   animation-delay: 0.3s;
   animation-timing-function: ease-in;
   animation-duration: 0.3s;
-  animation-fill-mode: forwards;
 }
 
 .like-icon.is-liked .like-icon-main-body {
-  animation-delay: 0.05s;
+  transition-delay: 0.05s;
 }
 
 .like-icon.is-liked .like-icon-contour {
-  animation-delay: 0.06s;
+  transition-delay: 0.06s;
 }
 
 .like-icon.is-liked {
@@ -44,11 +40,6 @@
   animation-timing-function: ease-in;
 }
 
-@keyframes core {
-  100% {
-    color: var(--color-red);
-  }
-}
 
 @keyframes like {
   50% {
@@ -60,11 +51,8 @@
 }
 
 @keyframes sparks {
-  50% {
-    color: var(--color-red);
-  }
   100% {
-    color: transparent;
+    color: var(--color-red);
   }
 }
 
