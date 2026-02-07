@@ -98,7 +98,8 @@
     1px -1px 0px rgba(255, 255, 255, 1);
 }
 
-@supports (text-stroke: 1px rgba(255, 255, 255, 1)) or (-webkit-text-stroke: 1px rgba(255, 255, 255, 1)) {
+@supports (text-stroke: 1px rgba(255, 255, 255, 1)) or
+  (-webkit-text-stroke: 1px rgba(255, 255, 255, 1)) {
   .card__image-label {
     text-stroke: 1px rgba(255, 255, 255, 1);
     -webkit-text-stroke: 1px rgba(255, 255, 255, 1);
@@ -144,6 +145,7 @@
   border: none;
   border-radius: 0px;
   padding: 0;
+  transition: outline 0.3s ease;
 }
 
 .button--heart:focus-visible {
@@ -156,8 +158,10 @@
   color: transparent;
 }
 
-.like-icon-contour {
-  color: var(--mainColor);
+.like-icon-core,
+.like-icon-main-body,
+.like-icon-countur {
+  transition: 0.1s linear;
 }
 
 .like-icon-core,
@@ -165,13 +169,19 @@
   transition-duration: 0.3s;
 }
 
-.like-icon:hover .like-icon-main-body {
-  transition-delay: 0.05s;
+.like-icon-core {
+  transition-delay: 0.03s;
 }
 
-/* .like-icon:hover .like-icon-core {
+.like-icon:hover .like-icon-core,
+.like-icon:active .like-icon-core {
   transition-delay: 0s;
-} */
+}
+
+.like-icon:hover .like-icon-main-body,
+.like-icon:active .like-icon-main-body {
+  transition-delay: 0.05s;
+}
 
 .like-icon:hover .like-icon-core,
 .like-icon:hover .like-icon-main-body {
@@ -182,6 +192,15 @@
 .like-icon:active .like-icon-core {
   color: var(--color-red);
 }
+
+.like-icon.is-liked .like-icon-contour {
+  transition-duration: 0.3s;
+  transition-delay: 0.06s;
+}
+
+/* .like-icon.is-liked .like-icon-main-body {
+  transition-delay: 0.05s;
+} */
 
 .button-container {
   display: flex;
@@ -252,7 +271,7 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .button::before {
@@ -319,7 +338,7 @@
     flex-direction: column;
     gap: 5px;
   }
-  
+
   .card__title {
     line-height: 1.3;
     padding: 3px 10px;

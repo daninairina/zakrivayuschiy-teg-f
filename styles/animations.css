@@ -10,11 +10,13 @@
 
 */
 
+.like-icon-heart {
+  transform-origin: center;
+}
+
 .like-icon.is-liked .like-icon-core,
 .like-icon.is-liked .like-icon-main-body,
 .like-icon.is-liked .like-icon-contour {
-  transition-duration: 0.3s;
-  transition-timing-function: linear;
   color: var(--color-red);
 }
 
@@ -25,21 +27,12 @@
   animation-duration: 0.3s;
 }
 
-.like-icon.is-liked .like-icon-main-body {
-  transition-delay: 0.05s;
-}
-
-.like-icon.is-liked .like-icon-contour {
-  transition-delay: 0.06s;
-}
-
-.like-icon.is-liked {
+.like-icon.is-liked .like-icon-heart {
   animation-name: like;
   animation-delay: 0.1s;
   animation-duration: 0.3s;
   animation-timing-function: ease-in;
 }
-
 
 @keyframes like {
   50% {
@@ -55,4 +48,3 @@
     color: var(--color-red);
   }
 }
-
